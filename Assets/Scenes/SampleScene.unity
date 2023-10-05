@@ -1081,6 +1081,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c85209c95efff4269a71c831e7a59887, type: 3}
+    - target: {fileID: 3828474417817363307, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987723140251446361, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.79999995
+      objectReference: {fileID: 0}
     - target: {fileID: 7589006222666686371, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_text
       value: Ho Chi Minh
@@ -1495,6 +1503,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5333f259cce4b4d1f85d40eabbb74512, type: 3}
+    - target: {fileID: 3828474417817363307, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.878
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987723140251446361, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.858
+      objectReference: {fileID: 0}
     - target: {fileID: 7589006222666686371, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_text
       value: Haikou
@@ -1912,13 +1928,21 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5d469c68538834263a541df2a6cdf4cd, type: 3}
+    - target: {fileID: 3828474417817363307, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.881
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987723140251446361, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.86099994
+      objectReference: {fileID: 0}
     - target: {fileID: 7589006222666686371, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_text
       value: Brunei
       objectReference: {fileID: 0}
     - target: {fileID: 8545799143373309209, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.347
+      value: -0.292
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
@@ -1990,13 +2014,21 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0e41535ac376b4d89b0349a93dd7e8ba, type: 3}
+    - target: {fileID: 3828474417817363307, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.892
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987723140251446361, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.872
+      objectReference: {fileID: 0}
     - target: {fileID: 7589006222666686371, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_text
       value: Taipei
       objectReference: {fileID: 0}
     - target: {fileID: 8545799143373309209, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.342
+      value: -0.292
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
@@ -2106,11 +2138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3195654480684727094, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.643
+      value: -0.673
       objectReference: {fileID: 0}
     - target: {fileID: 3195654480684727094, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.835
+      value: 0.812
       objectReference: {fileID: 0}
     - target: {fileID: 3195654480684727094, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2297,6 +2329,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5546e686c0f234f74bd41795151b3ede, type: 3}
+    - target: {fileID: 3828474417817363307, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987723140251446361, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.8589999
+      objectReference: {fileID: 0}
     - target: {fileID: 7589006222666686371, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_text
       value: 'Manila
@@ -2305,7 +2345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8545799143373309209, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.343
+      value: -0.293
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3450f3ab8cf1741f7a9d55df41096508, type: 3}
