@@ -8,7 +8,7 @@ public class Port : MonoBehaviour
 {
     public static List<Port> allPorts = new List<Port>();
     
-    [SerializeField] private TMP_Text priceTxt, shipAmountTxt, cargosTxt;
+    [SerializeField] private TMP_Text priceTxt, shipAmountTxt, cargosTxt, secTxt;
     [SerializeField] private int cargos = 3;
     [SerializeField] private float cargoTime = 1;
 
@@ -18,18 +18,24 @@ public class Port : MonoBehaviour
     private float timeCounter = 0;
     private int boatAmount = 0;
 
+    private bool paused = false;
+
     private void Awake()
     {
-        allPorts.Add(this);
+        allPorts = new List<Port>();
+        
     }
 
     private void Start()
     {
+        allPorts.Add(this);
         UpdateInfo();
+        secTxt.text = "" + cargoTime;
     }
 
     private void Update()
     {
+        if(paused) return;
         timeCounter += Time.deltaTime;
         if (timeCounter >= cargoTime)
         {
@@ -43,16 +49,18 @@ public class Port : MonoBehaviour
     {
         if (Money.i.spendMoney(GetBoatPrice()))
         {
-            UI.i.Notification("Purchase Successful");
+            UI.i.Notification("PURCHASE SUCCESSFUL");
             boatAmount += 1;
             UpdateInfo();
             GameObject newShip = Instantiate(ship);
             newShip.GetComponent<Ship>().Born(this);
             newShip.transform.position = transform.position;
+            GameObject sprite = GetComponentInChildren<SpriteRenderer>().gameObject;
+            sprite.transform.localScale = sprite.transform.localScale + new Vector3(0.02f, 0.02f, 0.02f);
         }
         else
         {
-            UI.i.Notification("You Are Broke");
+            UI.i.Notification("YOU ARE BROKE");
         }
     }
     
@@ -81,5 +89,10 @@ public class Port : MonoBehaviour
         cargos--;
         UpdateInfo();
         return true;
+    }
+
+    public void Pause()
+    {
+        paused = true;
     }
 }

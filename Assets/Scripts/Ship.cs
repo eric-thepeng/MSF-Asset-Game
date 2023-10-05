@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,11 +12,14 @@ public class Ship : MonoBehaviour
     private Port targetPort;
     private float speed = 0.3f;
 
+    public static int shipAmount = 0;
+
     public enum State
     {
         Waiting,
         SailOff,
-        HeadHome
+        HeadHome,
+        Paused
     }
 
     public State state;
@@ -24,6 +28,9 @@ public class Ship : MonoBehaviour
     {
         this.homePort = homePort;
         state = State.Waiting;
+        GetComponentInChildren<TMP_Text>().text = homePort.gameObject.name;
+        shipAmount += 1;
+        UI.i.UpdateShitCount();
     }
 
     private void Update()
@@ -66,6 +73,11 @@ public class Ship : MonoBehaviour
                 state = State.HeadHome;
             }
         }
+    }
+
+    public void Pause()
+    {
+        state = State.Paused;
     }
     /*
 

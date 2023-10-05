@@ -51,4 +51,9 @@ public class Money : MonoBehaviour
     {
         moneyUI.text = "" + amount;
     }
+
+    public int GetAmount()
+    {
+        return amount;
+    }
 }

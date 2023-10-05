@@ -21,8 +21,10 @@ public class UI : MonoBehaviour
 
     [SerializeField] private TMP_Text notificationBox;
     private float notificationTimeCount = 0;
-    private float notificationTimeDuration = 2;
-    
+    private float notificationTimeDuration = 1f;
+    private bool stays = false;
+    [SerializeField] private TMP_Text shipCountTxt;
+
     private void Start()
     {
         Notification("DYNASTY STARTS");
@@ -30,6 +32,7 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
+        if(stays) return;
         notificationTimeCount += Time.deltaTime;
         if (notificationTimeCount > notificationTimeDuration)
         {
@@ -38,10 +41,24 @@ public class UI : MonoBehaviour
         }
     }
 
-    public void Notification(string message)
+    public void Notification(string message, bool stays = false)
     {
+        this.stays = stays;
+        if (message.Equals(""))
+        {
+            notificationBox.gameObject.SetActive(false);
+        }
+        else
+        {
+            notificationBox.gameObject.SetActive(true);
+        }
         notificationTimeCount = 0;
         notificationBox.text = message;
         print(message);
+    }
+
+    public void UpdateShitCount()
+    {
+        shipCountTxt.text = Ship.shipAmount + "";
     }
 }
