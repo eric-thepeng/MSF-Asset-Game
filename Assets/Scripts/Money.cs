@@ -30,7 +30,11 @@ public class Money : MonoBehaviour
 
     public bool spendMoney(int amount)
     {
-        if (this.amount < amount) return false;
+        if (this.amount < amount)
+        {
+            UI.i.Notification("YOU ARE BROKE");
+            return false;
+        }
         this.amount -= amount;
         UpdateUI();
         return true;

@@ -8,9 +8,13 @@ using Random = UnityEngine.Random;
 
 public class Ship : MonoBehaviour
 {
+    
+    
+    
     private Port homePort;
     private Port targetPort;
     private float speed = 0.3f;
+    private int floor = 0;
 
     public static int shipAmount = 0;
 
@@ -29,6 +33,8 @@ public class Ship : MonoBehaviour
         this.homePort = homePort;
         state = State.Waiting;
         GetComponentInChildren<TMP_Text>().text = homePort.gameObject.name;
+        transform.position = homePort.transform.position;
+        floor = homePort.GetFloor();
         shipAmount += 1;
         UI.i.UpdateShitCount();
     }
@@ -79,27 +85,14 @@ public class Ship : MonoBehaviour
     {
         state = State.Paused;
     }
-    /*
+}
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+public class ShipState
+{
+    public Location targetLocation;
+    public ShipState()
     {
-        print("collider" + other.gameObject.name);
-        Port collisionPort = other.gameObject.GetComponent<Port>();
-        if(collisionPort == null) return;
         
-        if (state == State.SailOff)
-        {
-            if (collisionPort == targetPort)
-            {
-                Money.i.Delivery();
-                state = State.HeadHome;
-            }
-        }else if (state == State.HeadHome)
-        {
-            if (collisionPort == homePort)
-            {
-                state = State.Waiting;
-            }
-        }
-    }*/
+    }
 }

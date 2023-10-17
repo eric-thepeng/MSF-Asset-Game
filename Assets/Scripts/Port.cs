@@ -4,15 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Port : MonoBehaviour
+public class Port : BuildableLocation
 {
     public static List<Port> allPorts = new List<Port>();
+    public bool active = false;
+    public int cargoNeed = 0;
+    
+    
     
     [SerializeField] private TMP_Text priceTxt, shipAmountTxt, cargosTxt, secTxt;
     [SerializeField] private int cargos = 3;
     [SerializeField] private float cargoTime = 1;
 
-    [SerializeField] private GameObject ship;
+    [SerializeField] private GameObject shipPrefab;
 
 
     private float timeCounter = 0;
@@ -45,24 +49,18 @@ public class Port : MonoBehaviour
         }
     }
 
-    void BuyBoat()
+    protected override void Build()
     {
-        if (Money.i.spendMoney(GetBoatPrice()))
-        {
-            UI.i.Notification("PURCHASE SUCCESSFUL");
-            boatAmount += 1;
-            UpdateInfo();
-            GameObject newShip = Instantiate(ship);
-            newShip.GetComponent<Ship>().Born(this);
-            newShip.transform.position = transform.position;
-            GameObject sprite = GetComponentInChildren<SpriteRenderer>().gameObject;
-            sprite.transform.localScale = sprite.transform.localScale + new Vector3(0.02f, 0.02f, 0.02f);
-        }
-        else
-        {
-            UI.i.Notification("YOU ARE BROKE");
-        }
+        UI.i.Notification("Deployed a Soldier");
+        boatAmount += 1;
+        UpdateInfo();
+        GameObject newShip = Instantiate(shipPrefab);
+        newShip.GetComponent<Ship>().Born(this);
+        GameObject sprite = GetComponentInChildren<SpriteRenderer>().gameObject;
+        sprite.transform.localScale = sprite.transform.localScale + new Vector3(0.02f, 0.02f, 0.02f);
     }
+
+
     
     int GetBoatPrice()
     {
@@ -78,11 +76,10 @@ public class Port : MonoBehaviour
 
     }
 
-    private void OnMouseUpAsButton()
-    {
-        BuyBoat();
-    }
 
+    
+    
+    
     public bool PickUpCargo()
     {
         if (cargos <= 0) return false;
